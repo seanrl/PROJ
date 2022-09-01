@@ -312,11 +312,7 @@ set(PROJ_DATA_PATH "${CMAKE_INSTALL_FULL_DATADIR}/proj")
 ################################################################################
 include(CTest)
 
-if(BUILD_TESTING)
-  include(ProjTest)
-else()
-  message(STATUS "Testing disabled")
-endif()
+message(STATUS "Testing disabled")
 
 ################################################################################
 # Build configured components
@@ -328,9 +324,6 @@ add_subdirectory(include)
 add_subdirectory(src)
 add_subdirectory(man)
 add_subdirectory(cmake)
-if(BUILD_TESTING)
-  add_subdirectory(test)
-endif()
 
 set(docfiles COPYING NEWS AUTHORS)
 install(FILES ${docfiles}
